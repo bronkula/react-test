@@ -43,16 +43,17 @@
 
 .card {
   background-color:white;
-  padding:1em;
   border-radius:4px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   margin-top:1em;
   margin-bottom:1em;
 }
-.card>:first-child { margin-block-start:0; }
-.card>:last-child { margin-block-end:0; }
+.pad { padding:1em; }
+.pad>:first-child { margin-block-start:0; }
+.pad>:last-child { margin-block-end:0; }
 
 
+.line-up { border-top:1px solid rgba(0,0,0,0.4); }
 
 
 .navbar {
