@@ -62,6 +62,8 @@ const LearnIntroPage = (props) => {
 	return (<>
 		<h3>Learn about react stuff.</h3>
 
+		<p>I should probably mention this page is only useful if you also look at the <a href="https://github.com/bronkula/react-test" target="_blank">github source repository</a>. The build will just seem silly by itself.</p>
+
 		<div className="flex-parent">
 			<div className="flex-child"/>
 			<Link className="btn" to={`${props.path}/1`}>Start!</Link>

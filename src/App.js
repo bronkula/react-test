@@ -7,18 +7,14 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import { createHashHistory } from "history";
 
 import Header from "./parts/header";
 import MainPage from "./pages";
 import LearnPage from "./pages/learn";
 
-
-const hashHistory = createHashHistory();
-
 function App() {
    return (
-      <Router history={hashHistory}>
+      <Router>
          <Header title="Learning React">
             <Link to="/">Home</Link>
             <Link to="/learn">Learn React</Link>
