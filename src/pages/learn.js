@@ -7,9 +7,9 @@ import {
 	useRouteMatch
 } from 'react-router-dom';
 
-import NumberList from './numbers';
-import {Paginator,NextPrev} from './paginator';
-import ClickList from './clicklist';
+import NumberList from '../parts/numbers';
+import {Paginator,NextPrev} from '../parts/paginator';
+import ClickList from '../parts/clicklist';
 
 
 
