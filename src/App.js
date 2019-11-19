@@ -2,20 +2,23 @@ import React from 'react';
 import './App.css';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link
 } from 'react-router-dom';
+import { createHashHistory } from "history";
 
 import Header from "./parts/header";
 import MainPage from "./pages";
 import LearnPage from "./pages/learn";
 
 
+const hashHistory = createHashHistory();
+
 function App() {
    return (
-      <Router>
+      <Router history={hashHistory}>
          <Header title="Learning React">
             <Link to="/">Home</Link>
             <Link to="/learn">Learn React</Link>
