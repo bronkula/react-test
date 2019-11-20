@@ -27,25 +27,29 @@ const LearnPage = () => {
 		{first:'Arial',second:'serif'}
 	);
 
-	return (
-		<Switch>
-			<Route exact path={path}>
-				<LearnIntroPage path={path}/>
-			</Route>
-			<Route exact path={`${path}/1`}>
-				<Learn1Page path={path}/>
-			</Route>
-			<Route exact path={`${path}/2`}>
-				<Learn2Page path={path} fonts={fonts} setFont={setFont} />
-			</Route>
-			<Route exact path={`${path}/3`}>
-				<Learn3Page path={path} fonts={fonts} setFont={setFont} />
-			</Route>
-			<Route exact path={`${path}/4`}>
-				<Learn4Page path={path} fonts={fonts} />
-			</Route>
-		</Switch>
-	);
+	return (<>
+		<div className="hero"><h2>Learn React</h2></div>
+		
+		<div className="container">
+			<Switch>
+				<Route exact path={path}>
+					<LearnIntroPage path={path}/>
+				</Route>
+				<Route exact path={`${path}/1`}>
+					<Learn1Page path={path}/>
+				</Route>
+				<Route exact path={`${path}/2`}>
+					<Learn2Page path={path} fonts={fonts} setFont={setFont} />
+				</Route>
+				<Route exact path={`${path}/3`}>
+					<Learn3Page path={path} fonts={fonts} setFont={setFont} />
+				</Route>
+				<Route exact path={`${path}/4`}>
+					<Learn4Page path={path} fonts={fonts} />
+				</Route>
+			</Switch>
+		</div>
+	</>);
 }
 
 
@@ -82,14 +86,12 @@ const Learn1Page = ({path}) => {
 			<div class="pad">
 				<h3>Lists</h3>
 	
-				<hr/>
-				<div>Inline List</div>
+				<h4>Inline List</h4>
 				{arr.map((o,i)=>
 					<div key={i}>{o}</div>
 				)}
 	
-				<hr/>
-				<div>Component List</div>
+				<h4>Component List</h4>
 				<NumberList data={arr} />
 			</div>
 
@@ -124,22 +126,20 @@ const Learn2Page = ({path,fonts,setFont}) => {
 			<div class="pad">
 				<h3>React forms</h3>
 	
-				<div>Choose a sans-serif font. Such as:
-					<ClickList data={fontlist} callback={setFont} delimiter=", " />
-				</div>
+				<p>Choose a sans-serif font.</p>
+				<ClickList data={fontlist} callback={setFont} />
+
+				<p>You can type into either of these inputs.</p>
+				<input className="form-input" type="text" value={fonts.first} onChange={handleInput} />
 	
-				<hr/>
-				<div>This input will update all values instantly.</div>
-				<input type="text" value={fonts.first} onChange={handleInput} />
 	
-				<hr/>
-				<div>Don't try to change values <em>on submit</em> of <em>controlled inputs</em>.</div>
+				<p>Although this one is inside a form, don't try to change values <em>on submit</em> of <em>controlled inputs</em>.</p>
 				<form onSubmit={handleSubmit}>
-					<input type="text" value={fonts.first} onChange={handleChange} />
+					<input className="form-input" type="text" value={fonts.first} onChange={handleChange} />
 				</form>
 	
-				<hr/>
-				<div style={{fontFamily:fonts.first}}>The chosen font is {fonts.first}.</div>
+	
+				<p style={{fontFamily:fonts.first}}>The chosen font is {fonts.first}.</p>
 			</div>
 			
 			<div class="pad line-up">
@@ -161,14 +161,14 @@ const Learn3Page = ({path,fonts,setFont}) => {
 				<h3>Select Pulldowns</h3>
 	
 				<hr/>
-				<select value={fonts.second} onChange={handleChange}>
+				<select className="form-input" value={fonts.second} onChange={handleChange}>
 					<option value="times new roman">Times New Roman</option>
 					<option value="cambria">Cambria</option>
 					<option value="georgia">Georgia</option>
 					<option value="serif">Serif</option>
 				</select>
 	
-				<div style={{fontFamily:fonts.second}}>The chosen font is {fonts.second}.</div>
+				<p style={{fontFamily:fonts.second}}>The chosen font is {fonts.second}.</p>
 			</div>
 			
 			<div class="pad line-up">

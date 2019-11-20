@@ -20,12 +20,10 @@ function App() {
             <Link to="/learn">Learn React</Link>
          </Header>
 
-         <div className="container">
-            <Switch>
-               <Route exact path="/" component={MainPage} />
-               <Route path="/learn" component={LearnPage} />
-            </Switch>
-         </div>
+         <Switch>
+            <Route exact path="/" component={MainPage} />
+            <Route path="/learn" component={LearnPage} />
+         </Switch>
       </Router>
    );
 }
